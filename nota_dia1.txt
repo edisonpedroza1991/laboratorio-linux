@@ -1,0 +1,16 @@
+
+Problema observado:
+Desde /tmp, cat laboratorio_dia1/ventas.txt devolvió
+“No such file or directory”.
+
+Causa:
+La ruta relativa apuntaba a /tmp/laboratorio_dia1/ventas.txt,
+pero nuestro archivo estaba en /home/edison/laboratorio_dia1/.
+
+Cómo lo comprobé:
+pwd mostró /tmp. La lectura con la ruta relativa falló,
+pero con la ruta absoluta pude leer los 120 EUR.
+
+Solución:
+Usé cat /home/edison/laboratorio_dia1/ventas.txt
+sin cambiar de carpeta.
